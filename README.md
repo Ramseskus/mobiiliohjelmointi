@@ -1,4 +1,4 @@
-# mobiiliohjelmointi https://github.com/Ramseskus/Demo/mobiiliohjelmointi.git
+# mobiiliohjelmointi https://github.com/Ramseskus/mobiiliohjelmointi.git
 Kurssitehtävät (Syksy 2020)
 
 1. Tehtävä: [Demo](Demo/installation-demo/App.js)
