@@ -14,6 +14,7 @@ export default function App() {
   const [title, setTitle] = useState("");
 
   const getLocation = () => {
+    console.log("getLocation")
     const url =
       "http://www.mapquestapi.com/geocoding/v1/address?key=oXxeShecQm439ah7SXIpjgJkqmPE4Tf1" +
       "&location=" +
@@ -21,8 +22,9 @@ export default function App() {
     fetch(url)
       .then((response) => response.json())
       .then((json) => {
-        parseRegion(json.results[0].locations[0].latLng);
+        const reg = parseRegion(json.results[0].locations[0].latLng);
         setTitle(json.results[0].providedLocation.location);
+        getRestaurants(reg)
       })
       .catch((error) => alert(error));
   };
@@ -35,14 +37,16 @@ export default function App() {
       longitudeDelta: 0.03,
     };
     setRegion(region);
+    return region
   };
 
-  const getRestaurants = () => {
+  const getRestaurants = (reg) => {
+    console.log("getRestaurants")
     const baseUrl =
       "https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=restaurant&location=" +
-      region.latitude +
+      reg.latitude +
       " " +
-      region.longitude +
+      reg.longitude +
       "&radius=200&key=AIzaSyAO4XKZBWBsRJr87G8kzAY8TseVhIqFGH4";
     fetch(baseUrl)
       .then((response) => response.json())
@@ -64,7 +68,7 @@ export default function App() {
 
   const combinedFunctions = () => {
     getLocation();
-    getRestaurants();
+    //getRestaurants();
   };
 
   const onRegionChange = (region) => {
