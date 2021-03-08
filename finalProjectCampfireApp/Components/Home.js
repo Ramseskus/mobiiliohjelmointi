@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, Image, ImageBackground, View} from 'react-native';
-import { Button, Divider, Layout, TopNavigation, Icon, useStyleSheet, StyleService, Card, Avatar, Text } from '@ui-kitten/components';
+import { Button, Divider, Layout, TopNavigation, Icon, useStyleSheet, StyleService, Card, Text } from '@ui-kitten/components';
 
 export const HomeScreen = ({ navigation }) => {
 
@@ -10,6 +10,10 @@ export const HomeScreen = ({ navigation }) => {
 
     const navigateTabs = () => {
       navigation.navigate('Tabs');
+    };
+
+    const navigateRecord = () => {
+      navigation.navigate('Record');
     };
 
     const styles = useStyleSheet(themedStyles);
@@ -25,6 +29,7 @@ export const HomeScreen = ({ navigation }) => {
           <View style={styles.navigation}>
             <Button status='danger' style={styles.button} onPress={navigateLyrics}>SEARCH LYRICS</Button>
             <Button status='danger' style={styles.button} onPress={navigateTabs}>SEARCH TABS</Button>
+            <Button status='danger' style={styles.button} onPress={navigateRecord}>RECORD</Button>
           </View>
 				</View>
     </ImageBackground>
@@ -32,14 +37,8 @@ export const HomeScreen = ({ navigation }) => {
 
     return (
       <SafeAreaView style={{flex: 1, margin: 0}}>
-        <TopNavigation title='MyApp' alignment='center'/>
-        <Divider/>
           <Layout style={styles.container}>
-            <Layout style={styles.layout}>
-              <Avatar style={styles.avatar} source={require('../assets/campfire_002.jpg')}></Avatar>
-              <Text style={styles.text} category='h5'>Campfire</Text>
-            </Layout>
-          <Card header={header} style={{height: '90%'}}>
+          <Card header={header} style={{height: '100%', padding: 0,}}>
           </Card>
           </Layout>
       </SafeAreaView>
@@ -49,11 +48,7 @@ export const HomeScreen = ({ navigation }) => {
   const themedStyles = StyleService.create({
     container: {
       flex: 1, 
-      paddingHorizontal: 8,
       margin: 0,
-    },
-    layout: {
-      flexDirection: 'row',
     },
     button: {
       margin: 10,
@@ -64,18 +59,15 @@ export const HomeScreen = ({ navigation }) => {
     },
     overlay: {
       ...StyleSheet.absoluteFill,
-      backgroundColor: 'rgba(0, 0, 0, 0.4)',
+      backgroundColor: 'rgba(0, 0, 0, 0.3)',
     },
     text: {
       margin: 5,
     },
-    avatar: {
-      margin: 5,
-    },
     navigation: {
-      flexDirection: 'row',
       justifyContent: 'center',
-      marginTop: 270,
+      alignItems: 'center',
+      marginTop: 150,
     }
   });
   
