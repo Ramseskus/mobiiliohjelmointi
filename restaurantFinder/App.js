@@ -47,7 +47,7 @@ export default function App() {
       reg.latitude +
       " " +
       reg.longitude +
-      "&radius=200&key=AIzaSyAO4XKZBWBsRJr87G8kzAY8TseVhIqFGH4";
+      "&radius=200&key=*****";
     fetch(baseUrl)
       .then((response) => response.json())
       .then((json) => {
