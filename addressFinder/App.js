@@ -18,7 +18,7 @@ export default function App() {
 
   const getLocation = () => {
     const url =
-      "http://www.mapquestapi.com/geocoding/v1/address?key=oXxeShecQm439ah7SXIpjgJkqmPE4Tf1" +
+      "http://www.mapquestapi.com/geocoding/v1/address?key=*****" +
       "&location=" +
       title;
     fetch(url)
