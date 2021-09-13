@@ -6,7 +6,7 @@ import "firebase/auth";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC3Iua7GtHTvAaMKhM-D3MJxgABBTtBZ14",
+  apiKey: "****",
   authDomain: "shoppinglist-1216d.firebaseapp.com",
   databaseURL: "https://shoppinglist-1216d-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "shoppinglist-1216d",
